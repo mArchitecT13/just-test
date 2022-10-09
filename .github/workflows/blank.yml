@@ -2,7 +2,7 @@ name: Lighthouse
 on: push
 
 jobs:
-  build:
+  build_and_lighthouse:
 
     runs-on: ubuntu-latest
 
@@ -24,10 +24,11 @@ jobs:
 
     - name: Build
       run: npm run build
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
+#   lighthouse:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@master
+
     - name: Lighthouse
       uses: foo-software/lighthouse-check-action@master
       with:
